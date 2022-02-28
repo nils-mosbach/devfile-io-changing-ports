@@ -16,7 +16,7 @@ components:
       mountSources: true
 
   # Grafana
-  - name: logging-grafana-4900
+  - name: logging-grafana4900
     container:
       image: "grafana/grafana:7.5.4"
       env:
@@ -25,55 +25,49 @@ components:
       memoryLimit: 512Mi
       endpoints:
         - exposure: public
-          name: grafana-4900
+          name: grafana4900
           protocol: http
           targetPort: 4900
 
   # Grafana
-  - name: logging-grafana-4910
+  - name: logging-grafana4910
     container:
       image: "grafana/grafana:7.5.4"
       env:
         - value: "4910"
           name: GF_SERVER_HTTP_PORT
-        - value: "http://localhost:4910"
-          name: LOKI_URL
       memoryLimit: 512Mi
       endpoints:
         - exposure: public
-          name: grafana-4910
+          name: grafana4910
           protocol: http
           targetPort: 4910
 
   # Grafana
-  - name: logging-grafana-4920
+  - name: logging-grafana4920
     container:
       image: "grafana/grafana:7.5.4"
       env:
         - value: "4920"
           name: GF_SERVER_HTTP_PORT
-        - value: "http://localhost:4910"
-          name: LOKI_URL
       memoryLimit: 512Mi
       endpoints:
         - exposure: public
-          name: grafana-4920
+          name: grafana4920
           protocol: http
           targetPort: 4920
   
   # Grafana
-  - name: logging-grafana-4930
+  - name: logging-grafana4930
     container:
       image: "grafana/grafana:7.5.4"
       env:
         - value: "4930"
           name: GF_SERVER_HTTP_PORT
-        - value: "http://localhost:4910"
-          name: LOKI_URL
       memoryLimit: 512Mi
       endpoints:
         - exposure: public
-          name: grafana-4930
+          name: grafana4930
           protocol: http
           targetPort: 4930
   
