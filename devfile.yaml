@@ -1,0 +1,83 @@
+schemaVersion: 2.1.0
+metadata:
+  name: devfile-test
+components:
+
+  # Development Tooling
+  - name: nodejsdev
+    container:
+      image: quay.io/devfile/universal-developer-image:ubi8-b452131
+      endpoints:
+        - exposure: public
+          name: nodejs
+          protocol: http
+          targetPort: 3000
+      memoryLimit: 1G
+      mountSources: true
+
+  # Grafana
+  - name: logging-grafana
+    container:
+      image: "grafana/grafana:7.5.4"
+      env:
+        - value: "4900"
+          name: GF_SERVER_HTTP_PORT
+      memoryLimit: 512Mi
+      endpoints:
+        - exposure: public
+          name: grafana-4900
+          protocol: http
+          targetPort: 4900
+
+  # Grafana
+  - name: logging-grafana
+    container:
+      image: "grafana/grafana:7.5.4"
+      env:
+        - value: "4910"
+          name: GF_SERVER_HTTP_PORT
+        - value: "http://localhost:4910"
+          name: LOKI_URL
+      memoryLimit: 512Mi
+      endpoints:
+        - exposure: public
+          name: grafana-4910
+          protocol: http
+          targetPort: 4910
+
+  # Grafana
+  - name: logging-grafana
+    container:
+      image: "grafana/grafana:7.5.4"
+      env:
+        - value: "4920"
+          name: GF_SERVER_HTTP_PORT
+        - value: "http://localhost:4910"
+          name: LOKI_URL
+      memoryLimit: 512Mi
+      endpoints:
+        - exposure: public
+          name: grafana-4920
+          protocol: http
+          targetPort: 4920
+  
+  # Grafana
+  - name: logging-grafana
+    container:
+      image: "grafana/grafana:7.5.4"
+      env:
+        - value: "4930"
+          name: GF_SERVER_HTTP_PORT
+        - value: "http://localhost:4910"
+          name: LOKI_URL
+      memoryLimit: 512Mi
+      endpoints:
+        - exposure: public
+          name: grafana-4930
+          protocol: http
+          targetPort: 4930
+  
+  # volumes
+  - name: data-db
+    volume:
+      size: 2Gi
