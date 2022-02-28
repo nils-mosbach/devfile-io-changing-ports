@@ -16,7 +16,7 @@ components:
       mountSources: true
 
   # Grafana
-  - name: logging-grafana
+  - name: logging-grafana-4900
     container:
       image: "grafana/grafana:7.5.4"
       env:
@@ -30,7 +30,7 @@ components:
           targetPort: 4900
 
   # Grafana
-  - name: logging-grafana
+  - name: logging-grafana-4910
     container:
       image: "grafana/grafana:7.5.4"
       env:
@@ -46,7 +46,7 @@ components:
           targetPort: 4910
 
   # Grafana
-  - name: logging-grafana
+  - name: logging-grafana-4920
     container:
       image: "grafana/grafana:7.5.4"
       env:
@@ -62,7 +62,7 @@ components:
           targetPort: 4920
   
   # Grafana
-  - name: logging-grafana
+  - name: logging-grafana-4930
     container:
       image: "grafana/grafana:7.5.4"
       env:
