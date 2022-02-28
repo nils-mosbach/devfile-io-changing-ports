@@ -1,1 +1,1 @@
-# devfile-io-chaning-ports
+# devfile-io-changing-ports
